@@ -8,8 +8,12 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @date: 2022/3/6
  */
 public class IdHelper {
-    public static Integer idx(AtomicInteger id){
+    public static Integer idand1000(AtomicInteger id){
         id.set(id.get()+1000);
+        return id.get();
+    }
+    public static Integer idand1(AtomicInteger id){
+        id.set(id.get()+1);
         return id.get();
     }
 }

@@ -19,7 +19,7 @@ public class Table_List_SRC_SHEET {
         //循环主参数
         for (String table : Config.tables) {
             Table_List_SRC_LINE table_list_src_line = new Table_List_SRC_LINE();
-            table_list_src_line.setRUN_ID(IdHelper.idx(Config.Table_List_SRC_SHEET_RUNID));
+            table_list_src_line.setRUN_ID(IdHelper.idand1000(Config.Table_List_SRC_SHEET_RUNID));
             table_list_src_line.setMODULE("PASSAGE");
             table_list_src_line.setSUB_MODULE(table.toUpperCase());
             table_list_src_line.setTAB_TYPE("INC");

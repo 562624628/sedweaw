@@ -18,7 +18,7 @@ public class Table_List_STG_SHEET {
         //循环主参数
         for (String table : Config.tables) {
             Table_List_STG_LINE table_list_stg_line = new Table_List_STG_LINE();
-            table_list_stg_line.setRUN_ID(IdHelper.idx(Config.Table_List_STG_SHEET_RUNID));
+            table_list_stg_line.setRUN_ID(IdHelper.idand1000(Config.Table_List_STG_SHEET_RUNID));
             table_list_stg_line.setMODULE("PASSAGE");
             table_list_stg_line.setSUB_MODULE(table.toUpperCase());
             table_list_stg_line.setTAB_TYPE("PRE_TAR");
@@ -40,7 +40,7 @@ public class Table_List_STG_SHEET {
         //循环dc_pk_map参数
         for (String table : Config.tables) {
             Table_List_STG_LINE table_list_stg_line = new Table_List_STG_LINE();
-            table_list_stg_line.setRUN_ID(IdHelper.idx(Config.Table_List_STG_SHEET_dcPkMapId));
+            table_list_stg_line.setRUN_ID(IdHelper.idand1(Config.Table_List_STG_SHEET_dcPkMapId));
             table_list_stg_line.setMODULE("PASSAGE");
             table_list_stg_line.setSUB_MODULE(table.toUpperCase());
             table_list_stg_line.setTAB_TYPE("PKMAP");

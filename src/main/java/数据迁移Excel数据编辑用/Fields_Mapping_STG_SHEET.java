@@ -23,7 +23,10 @@ public class Fields_Mapping_STG_SHEET {
         Connection connection = ConnectionHelper.getConnection(JDBCENUM.NEW);
         for (String table : Config.tables) {
             List<FieldObject> tableFields = ConnectionHelper.getColumnNames(table, connection);
+            IdHelper.idand1000(Config.Fields_Mapping_STG_SHEET_RUNID);
+
             for (FieldObject tableField : tableFields) {
+
                 Fields_Mapping_STG_LINE fields_mapping_stg_line = Fields_Mapping_STG_LINE.builder()
                         .ID(null)
                         .RUN_ID(Config.Fields_Mapping_STG_SHEET_RUNID.get())
@@ -175,7 +178,6 @@ public class Fields_Mapping_STG_SHEET {
                     .PHASE("MID")
                     .build();
             fields_mapping_stg_lines.add(dc_dml_type);
-            IdHelper.idx(Config.Fields_Mapping_STG_SHEET_RUNID);
         }
         for (Fields_Mapping_STG_LINE fields_mapping_stg_line : fields_mapping_stg_lines) {
             System.out.println(fields_mapping_stg_line.toString());

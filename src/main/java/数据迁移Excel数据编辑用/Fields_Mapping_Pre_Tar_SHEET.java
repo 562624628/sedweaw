@@ -3,6 +3,7 @@ package 数据迁移Excel数据编辑用;
 import enums.JDBCENUM;
 import helper.ConnectionHelper;
 import config.Config;
+import helper.IdHelper;
 import objects.FieldObject;
 import objects.Fields_Mapping_Pre_Tar_LINE;
 
@@ -20,11 +21,13 @@ public class Fields_Mapping_Pre_Tar_SHEET {
         List<Fields_Mapping_Pre_Tar_LINE> Fields_Mapping_Pre_Tar_LINEs = new ArrayList<>();
         Connection connection = ConnectionHelper.getConnection(JDBCENUM.NEW);
         for (String table : Config.tables) {
+            IdHelper.idand1000(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID);
+
             List<FieldObject> tableFields = ConnectionHelper.getColumnNames(table, connection);
             for (FieldObject tableField : tableFields) {
                 Fields_Mapping_Pre_Tar_LINE fields_mapping_pre_tar_line = Fields_Mapping_Pre_Tar_LINE.builder()
                         .ID(null)
-                        .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID)
+                        .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID.get())
                         .TABLE_NAME("dm_" + table)
                         .COLUMN_NAME(tableField.getFieldName())
                         .DATA_TYPE(tableField.getFieldType().toLowerCase())
@@ -55,7 +58,7 @@ public class Fields_Mapping_Pre_Tar_SHEET {
             //dc_org_id
             Fields_Mapping_Pre_Tar_LINE dc_org_id = Fields_Mapping_Pre_Tar_LINE.builder()
                     .ID(null)
-                    .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID)
+                    .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID.get())
                     .TABLE_NAME("dm_" + table)
                     .COLUMN_NAME("dc_org_id")
                     .DATA_TYPE("varchar")
@@ -84,7 +87,7 @@ public class Fields_Mapping_Pre_Tar_SHEET {
             //dc_tab_seq
             Fields_Mapping_Pre_Tar_LINE dc_tab_seq = Fields_Mapping_Pre_Tar_LINE.builder()
                     .ID(null)
-                    .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID)
+                    .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID.get())
                     .TABLE_NAME("dm_" + table)
                     .COLUMN_NAME("dc_tab_seq")
                     .DATA_TYPE("smallint")
@@ -113,7 +116,7 @@ public class Fields_Mapping_Pre_Tar_SHEET {
             //dc_etl_date
             Fields_Mapping_Pre_Tar_LINE dc_etl_date = Fields_Mapping_Pre_Tar_LINE.builder()
                     .ID(null)
-                    .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID)
+                    .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID.get())
                     .TABLE_NAME("dm_" + table)
                     .COLUMN_NAME("dc_etl_date")
                     .DATA_TYPE("date")
@@ -142,7 +145,7 @@ public class Fields_Mapping_Pre_Tar_SHEET {
             //dc_dml_type
             Fields_Mapping_Pre_Tar_LINE dc_dml_type = Fields_Mapping_Pre_Tar_LINE.builder()
                     .ID(null)
-                    .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID)
+                    .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID.get())
                     .TABLE_NAME("dm_" + table)
                     .COLUMN_NAME("dc_dml_type")
                     .DATA_TYPE("varchar")
@@ -171,7 +174,7 @@ public class Fields_Mapping_Pre_Tar_SHEET {
             //dc_insert_timestamp
             Fields_Mapping_Pre_Tar_LINE dc_insert_timestamp = Fields_Mapping_Pre_Tar_LINE.builder()
                     .ID(null)
-                    .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID)
+                    .RUN_ID(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID.get())
                     .TABLE_NAME("dm_" + table)
                     .COLUMN_NAME("dc_insert_timestamp")
                     .DATA_TYPE("datetime")
@@ -197,7 +200,6 @@ public class Fields_Mapping_Pre_Tar_SHEET {
                     .IS_GEN_SQL("Y")
                     .build();
             Fields_Mapping_Pre_Tar_LINEs.add(dc_insert_timestamp);
-            Config.Fields_Mapping_Pre_Tar_SHEET_RUNID++;
         }
         for (Fields_Mapping_Pre_Tar_LINE Fields_Mapping_Pre_Tar_LINE : Fields_Mapping_Pre_Tar_LINEs) {
             System.out.println(Fields_Mapping_Pre_Tar_LINE.toString());

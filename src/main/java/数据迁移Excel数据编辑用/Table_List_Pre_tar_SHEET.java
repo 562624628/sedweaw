@@ -18,7 +18,7 @@ public class Table_List_Pre_tar_SHEET {
         //循环主参数
         for (String table : Config.tables) {
             Table_List_Pre_tar_LINE table_list_pre_tar_line = new Table_List_Pre_tar_LINE();
-            table_list_pre_tar_line.setRUN_ID(IdHelper.idx(Config.Table_List_Pre_tar_SHEET_RUNDID));
+            table_list_pre_tar_line.setRUN_ID(IdHelper.idand1000(Config.Table_List_Pre_tar_SHEET_RUNDID));
             table_list_pre_tar_line.setMODULE("PASSAGE");
             table_list_pre_tar_line.setSUB_MODULE(table.toUpperCase());
             table_list_pre_tar_line.setTAB_TYPE("PRE_TAR");
@@ -40,7 +40,7 @@ public class Table_List_Pre_tar_SHEET {
         //循环dc_pk_map参数
         for (String table : Config.tables) {
             Table_List_Pre_tar_LINE table_list_pre_tar_line = new Table_List_Pre_tar_LINE();
-            table_list_pre_tar_line.setRUN_ID(IdHelper.idx(Config.Table_List_Pre_tar_SHEET_dcPkMapId));
+            table_list_pre_tar_line.setRUN_ID(IdHelper.idand1000(Config.Table_List_Pre_tar_SHEET_dcPkMapId));
             table_list_pre_tar_line.setMODULE("PASSAGE");
             table_list_pre_tar_line.setSUB_MODULE(table.toUpperCase());
             table_list_pre_tar_line.setTAB_TYPE("PRE_TAR");
