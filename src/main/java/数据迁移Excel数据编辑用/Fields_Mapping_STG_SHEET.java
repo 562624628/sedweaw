@@ -3,6 +3,7 @@ package 数据迁移Excel数据编辑用;
 import enums.JDBCENUM;
 import helper.ConnectionHelper;
 import config.Config;
+import helper.IdHelper;
 import objects.FieldObject;
 import objects.Fields_Mapping_STG_LINE;
 
@@ -25,7 +26,7 @@ public class Fields_Mapping_STG_SHEET {
             for (FieldObject tableField : tableFields) {
                 Fields_Mapping_STG_LINE fields_mapping_stg_line = Fields_Mapping_STG_LINE.builder()
                         .ID(null)
-                        .RUN_ID(Config.Fields_Mapping_STG_SHEET_RUNID)
+                        .RUN_ID(Config.Fields_Mapping_STG_SHEET_RUNID.get())
                         .TABLE_NAME("dc_" + table)
                         .COLUMN_NAME(tableField.getFieldName())
                         .DATA_TYPE(tableField.getFieldType().toLowerCase())
@@ -57,7 +58,7 @@ public class Fields_Mapping_STG_SHEET {
             //dc_org_id
             Fields_Mapping_STG_LINE dc_org_id = Fields_Mapping_STG_LINE.builder()
                     .ID(null)
-                    .RUN_ID(Config.Fields_Mapping_STG_SHEET_RUNID)
+                    .RUN_ID(Config.Fields_Mapping_STG_SHEET_RUNID.get())
                     .TABLE_NAME("dc_" + table)
                     .COLUMN_NAME("dc_org_id")
                     .DATA_TYPE("varchar")
@@ -87,7 +88,7 @@ public class Fields_Mapping_STG_SHEET {
             //dc_tab_seq
             Fields_Mapping_STG_LINE dc_tab_seq = Fields_Mapping_STG_LINE.builder()
                     .ID(null)
-                    .RUN_ID(Config.Fields_Mapping_STG_SHEET_RUNID)
+                    .RUN_ID(Config.Fields_Mapping_STG_SHEET_RUNID.get())
                     .TABLE_NAME("dc_" + table)
                     .COLUMN_NAME("dc_tab_seq")
                     .DATA_TYPE("smallint")
@@ -117,7 +118,7 @@ public class Fields_Mapping_STG_SHEET {
             //dc_etl_date
             Fields_Mapping_STG_LINE dc_etl_date = Fields_Mapping_STG_LINE.builder()
                     .ID(null)
-                    .RUN_ID(Config.Fields_Mapping_STG_SHEET_RUNID)
+                    .RUN_ID(Config.Fields_Mapping_STG_SHEET_RUNID.get())
                     .TABLE_NAME("dc_" + table)
                     .COLUMN_NAME("dc_etl_date")
                     .DATA_TYPE("date")
@@ -147,7 +148,7 @@ public class Fields_Mapping_STG_SHEET {
             //dc_dml_type
             Fields_Mapping_STG_LINE dc_dml_type = Fields_Mapping_STG_LINE.builder()
                     .ID(null)
-                    .RUN_ID(Config.Fields_Mapping_STG_SHEET_RUNID)
+                    .RUN_ID(Config.Fields_Mapping_STG_SHEET_RUNID.get())
                     .TABLE_NAME("dc_" + table)
                     .COLUMN_NAME("dc_dml_type")
                     .DATA_TYPE("varchar")
@@ -174,7 +175,7 @@ public class Fields_Mapping_STG_SHEET {
                     .PHASE("MID")
                     .build();
             fields_mapping_stg_lines.add(dc_dml_type);
-            Config.Fields_Mapping_STG_SHEET_RUNID++;
+            IdHelper.idx(Config.Fields_Mapping_STG_SHEET_RUNID);
         }
         for (Fields_Mapping_STG_LINE fields_mapping_stg_line : fields_mapping_stg_lines) {
             System.out.println(fields_mapping_stg_line.toString());

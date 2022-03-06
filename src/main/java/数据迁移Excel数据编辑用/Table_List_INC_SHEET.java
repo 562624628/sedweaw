@@ -1,6 +1,7 @@
 package 数据迁移Excel数据编辑用;
 
 import config.Config;
+import helper.IdHelper;
 import objects.Table_List_INC_LINE;
 
 import java.util.ArrayList;
@@ -17,9 +18,9 @@ public class Table_List_INC_SHEET {
         //循环主参数
         for (String table : Config.tables) {
             Table_List_INC_LINE table_list_inc_line = new Table_List_INC_LINE();
-            table_list_inc_line.setRUN_ID(Config.Table_List_INC_SHEET_RUNID++);
+            table_list_inc_line.setRUN_ID(IdHelper.idx(Config.Table_List_INC_SHEET_RUNID));
             table_list_inc_line.setMODULE("PASSAGE");
-            table_list_inc_line.setSUB_MODULE("PASSAGE");
+            table_list_inc_line.setSUB_MODULE(table.toUpperCase());
             table_list_inc_line.setTAB_TYPE("INC");
             table_list_inc_line.setTAB_NAME(table);
             table_list_inc_line.setHEAD_COL_NAME("");
