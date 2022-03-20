@@ -18,8 +18,8 @@ public class Table_List_INC_SHEET {
         //循环主参数
         for (String table : Config.tables) {
             Table_List_INC_LINE table_list_inc_line = new Table_List_INC_LINE();
-            table_list_inc_line.setRUN_ID(IdHelper.idand1000(Config.Table_List_INC_SHEET_RUNID));
-            table_list_inc_line.setMODULE("PASSAGE");
+            table_list_inc_line.setRUN_ID(IdHelper.idand10000(Config.Table_List_INC_SHEET_RUNID));
+            table_list_inc_line.setMODULE(Config.module.toUpperCase());
             table_list_inc_line.setSUB_MODULE(table.toUpperCase());
             table_list_inc_line.setTAB_TYPE("INC");
             table_list_inc_line.setTAB_NAME(table);
@@ -28,7 +28,7 @@ public class Table_List_INC_SHEET {
             table_list_inc_line.setDESC(table + ":incremental source data");
             table_list_inc_line.setSHORT_DESC("");
             table_list_inc_line.setCREATE_METHOD("INT");
-            table_list_inc_line.setTAB_DB_CODE("INC_PASSAGE");
+            table_list_inc_line.setTAB_DB_CODE("INC_"+Config.module.toUpperCase());
             table_list_inc_line.setPHASE("INC");
             table_list_inc_line.setINC_RELATED("");
             table_list_inc_line.setTASK_OPTION("INSERT");

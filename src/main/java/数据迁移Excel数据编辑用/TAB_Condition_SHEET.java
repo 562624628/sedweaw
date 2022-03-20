@@ -19,9 +19,9 @@ public class TAB_Condition_SHEET {
             //2x1001
             TAB_Condition_LINE tab_condition_line_2x1 = TAB_Condition_LINE.builder()
                     .ID(null)
-                    .RUN_ID(IdHelper.idand1000(Config.TAB_Condition_SHEET_Run2x1))
+                    .RUN_ID(IdHelper.idand10000(Config.TAB_Condition_SHEET_Run2x1))
                     .TAR_TABLE(table)
-                    .SRC_TAB("dc_inc_full_list_passage")
+                    .SRC_TAB("dc_inc_full_list_"+Config.module.toLowerCase())
                     .SRC_TAB_ALIAS("b")
                     .COL_NAME("b.sub_domain")
                     .EXPRESION_FURMULA("=")
@@ -33,13 +33,13 @@ public class TAB_Condition_SHEET {
             //3x1001
             TAB_Condition_LINE tab_condition_line_3x1 = TAB_Condition_LINE.builder()
                     .ID(null)
-                    .RUN_ID(IdHelper.idand1000(Config.TAB_Condition_SHEET_Run3x1))
+                    .RUN_ID(IdHelper.idand10000(Config.TAB_Condition_SHEET_Run3x1))
                     .TAR_TABLE("dc_" + table)
                     .SRC_TAB(table)
                     .SRC_TAB_ALIAS("a")
-                    .COL_NAME("a.id")
-                    .EXPRESION_FURMULA("is not")
-                    .EXPRESION_VALUE("null")
+                    .COL_NAME("a.deleted")
+                    .EXPRESION_FURMULA("=")
+                    .EXPRESION_VALUE("'N'")
                     .EXEC_POSITION("BEF")
                     .PHASE("MID")
                     .build();
@@ -48,7 +48,7 @@ public class TAB_Condition_SHEET {
             //4x1001
             TAB_Condition_LINE tab_condition_line_4x1 = TAB_Condition_LINE.builder()
                     .ID(null)
-                    .RUN_ID(IdHelper.idand1000(Config.TAB_Condition_SHEET_Run4x1))
+                    .RUN_ID(IdHelper.idand10000(Config.TAB_Condition_SHEET_Run4x1))
                     .TAR_TABLE("dm_" + table)
                     .SRC_TAB("dc_" + table)
                     .SRC_TAB_ALIAS("a")
@@ -63,7 +63,7 @@ public class TAB_Condition_SHEET {
             //5x1001
             TAB_Condition_LINE tab_condition_line_5x1 = TAB_Condition_LINE.builder()
                     .ID(null)
-                    .RUN_ID(IdHelper.idand1000(Config.TAB_Condition_SHEET_Run5x1))
+                    .RUN_ID(IdHelper.idand10000(Config.TAB_Condition_SHEET_Run5x1))
                     .TAR_TABLE("dm_" + table)
                     .SRC_TAB("dc_" + table)
                     .SRC_TAB_ALIAS("a")

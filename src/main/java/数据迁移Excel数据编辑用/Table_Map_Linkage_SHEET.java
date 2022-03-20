@@ -19,7 +19,7 @@ public class Table_Map_Linkage_SHEET {
         for (String table : Config.tables) {
             Table_Map_Linkage_LINE table_list_pre_tar_line = Table_Map_Linkage_LINE.builder()
                     .ID(null)
-                    .RUN_ID(IdHelper.idand1000(Config.Table_Map_Linkage_SHEET_Run2x1))
+                    .RUN_ID(IdHelper.idand10000(Config.Table_Map_Linkage_SHEET_Run2x1))
                     .TABLE_NAME(table)
                     .HEAD_TAB_ALIAS("a")
                     .SUB_TAB_ALIAS("b")
@@ -36,7 +36,7 @@ public class Table_Map_Linkage_SHEET {
         for (String table : Config.tables) {
             Table_Map_Linkage_LINE table_list_pre_tar_line = Table_Map_Linkage_LINE.builder()
                     .ID(null)
-                    .RUN_ID(IdHelper.idand1000(Config.Table_Map_Linkage_SHEET_Run3x1))
+                    .RUN_ID(IdHelper.idand10000(Config.Table_Map_Linkage_SHEET_Run3x1))
                     .TABLE_NAME("dc_" + table)
                     .HEAD_TAB_ALIAS("a")
                     .SUB_TAB_ALIAS("b")

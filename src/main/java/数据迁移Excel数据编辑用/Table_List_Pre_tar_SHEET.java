@@ -18,8 +18,8 @@ public class Table_List_Pre_tar_SHEET {
         //循环主参数
         for (String table : Config.tables) {
             Table_List_Pre_tar_LINE table_list_pre_tar_line = new Table_List_Pre_tar_LINE();
-            table_list_pre_tar_line.setRUN_ID(IdHelper.idand1000(Config.Table_List_Pre_tar_SHEET_RUNDID));
-            table_list_pre_tar_line.setMODULE("PASSAGE");
+            table_list_pre_tar_line.setRUN_ID(IdHelper.idand10000(Config.Table_List_Pre_tar_SHEET_RUNDID));
+            table_list_pre_tar_line.setMODULE(Config.module.toUpperCase());
             table_list_pre_tar_line.setSUB_MODULE(table.toUpperCase());
             table_list_pre_tar_line.setTAB_TYPE("PRE_TAR");
             table_list_pre_tar_line.setTAB_NAME("dm_"+table);
@@ -28,7 +28,7 @@ public class Table_List_Pre_tar_SHEET {
             table_list_pre_tar_line.setDESC(table + ":前置核心全量数据表");
             table_list_pre_tar_line.setSHORT_DESC("");
             table_list_pre_tar_line.setCREATE_METHOD("INT");
-            table_list_pre_tar_line.setTAB_DB_CODE("PRE_TAR_PASSAGE");
+            table_list_pre_tar_line.setTAB_DB_CODE("PRE_TAR_"+Config.module.toUpperCase());
             table_list_pre_tar_line.setPHASE("PRE_TAR");
             table_list_pre_tar_line.setINC_RELATED("");
             table_list_pre_tar_line.setTASK_OPTION("INSERT");
@@ -40,8 +40,8 @@ public class Table_List_Pre_tar_SHEET {
         //循环dc_pk_map参数
         for (String table : Config.tables) {
             Table_List_Pre_tar_LINE table_list_pre_tar_line = new Table_List_Pre_tar_LINE();
-            table_list_pre_tar_line.setRUN_ID(IdHelper.idand1000(Config.Table_List_Pre_tar_SHEET_dcPkMapId));
-            table_list_pre_tar_line.setMODULE("PASSAGE");
+            table_list_pre_tar_line.setRUN_ID(IdHelper.idand10000(Config.Table_List_Pre_tar_SHEET_dcPkMapId));
+            table_list_pre_tar_line.setMODULE(Config.module.toUpperCase());
             table_list_pre_tar_line.setSUB_MODULE(table.toUpperCase());
             table_list_pre_tar_line.setTAB_TYPE("PRE_TAR");
             table_list_pre_tar_line.setTAB_NAME("dm_"+table);
@@ -50,7 +50,7 @@ public class Table_List_Pre_tar_SHEET {
             table_list_pre_tar_line.setDESC(table + ":前置核心全量数据表");
             table_list_pre_tar_line.setSHORT_DESC("");
             table_list_pre_tar_line.setCREATE_METHOD("INT");
-            table_list_pre_tar_line.setTAB_DB_CODE("PRE_TAR_PASSAGE");
+            table_list_pre_tar_line.setTAB_DB_CODE("PRE_TAR_"+Config.module.toUpperCase());
             table_list_pre_tar_line.setPHASE("PRE_TAR");
             table_list_pre_tar_line.setINC_RELATED("");
             table_list_pre_tar_line.setTASK_OPTION("REPLACE");

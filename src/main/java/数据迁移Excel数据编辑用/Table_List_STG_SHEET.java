@@ -18,8 +18,8 @@ public class Table_List_STG_SHEET {
         //循环主参数
         for (String table : Config.tables) {
             Table_List_STG_LINE table_list_stg_line = new Table_List_STG_LINE();
-            table_list_stg_line.setRUN_ID(IdHelper.idand1000(Config.Table_List_STG_SHEET_RUNID));
-            table_list_stg_line.setMODULE("PASSAGE");
+            table_list_stg_line.setRUN_ID(IdHelper.idand10000(Config.Table_List_STG_SHEET_RUNID));
+            table_list_stg_line.setMODULE(Config.module.toUpperCase());
             table_list_stg_line.setSUB_MODULE(table.toUpperCase());
             table_list_stg_line.setTAB_TYPE("PRE_TAR");
             table_list_stg_line.setTAB_NAME("dc_"+table);
@@ -28,7 +28,7 @@ public class Table_List_STG_SHEET {
             table_list_stg_line.setDESC(table + ":增量处理结果表");
             table_list_stg_line.setSHORT_DESC("");
             table_list_stg_line.setCREATE_METHOD("INT");
-            table_list_stg_line.setTAB_DB_CODE("STG_PASSAGE");
+            table_list_stg_line.setTAB_DB_CODE("STG_"+Config.module.toUpperCase());
             table_list_stg_line.setPHASE("MID");
             table_list_stg_line.setINC_RELATED("");
             table_list_stg_line.setTASK_OPTION("INSERT");
@@ -41,7 +41,7 @@ public class Table_List_STG_SHEET {
         for (String table : Config.tables) {
             Table_List_STG_LINE table_list_stg_line = new Table_List_STG_LINE();
             table_list_stg_line.setRUN_ID(IdHelper.idand1(Config.Table_List_STG_SHEET_dcPkMapId));
-            table_list_stg_line.setMODULE("PASSAGE");
+            table_list_stg_line.setMODULE(Config.module.toUpperCase());
             table_list_stg_line.setSUB_MODULE(table.toUpperCase());
             table_list_stg_line.setTAB_TYPE("PKMAP");
             table_list_stg_line.setTAB_NAME("dc_pk_map_"+table);
@@ -50,7 +50,7 @@ public class Table_List_STG_SHEET {
             table_list_stg_line.setDESC(table + ":新老主键id映射任务");
             table_list_stg_line.setSHORT_DESC("");
             table_list_stg_line.setCREATE_METHOD("INT");
-            table_list_stg_line.setTAB_DB_CODE("STG_PASSAGE");
+            table_list_stg_line.setTAB_DB_CODE("STG_"+Config.module.toUpperCase());
             table_list_stg_line.setPHASE("MID");
             table_list_stg_line.setINC_RELATED("");
             table_list_stg_line.setTASK_OPTION("PKMAP");

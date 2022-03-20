@@ -1,6 +1,5 @@
 package 数据迁移Excel数据编辑用;
 
-import enums.JDBCENUM;
 import helper.ConnectionHelper;
 import config.Config;
 import helper.IdHelper;
@@ -20,10 +19,10 @@ public class Fields_Mapping_STG_SHEET {
     public static void main(String[] args) {
         List<Fields_Mapping_STG_LINE> fields_mapping_stg_lines = new ArrayList<>();
         //设置jdbc
-        Connection connection = ConnectionHelper.getConnection(JDBCENUM.NEW);
+        Connection connection = ConnectionHelper.getConnection(Config.jdbcenum);
         for (String table : Config.tables) {
             List<FieldObject> tableFields = ConnectionHelper.getColumnNames(table, connection);
-            IdHelper.idand1000(Config.Fields_Mapping_STG_SHEET_RUNID);
+            IdHelper.idand10000(Config.Fields_Mapping_STG_SHEET_RUNID);
 
             for (FieldObject tableField : tableFields) {
 

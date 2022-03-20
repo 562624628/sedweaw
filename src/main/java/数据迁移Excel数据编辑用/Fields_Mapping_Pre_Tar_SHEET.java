@@ -1,6 +1,5 @@
 package 数据迁移Excel数据编辑用;
 
-import enums.JDBCENUM;
 import helper.ConnectionHelper;
 import config.Config;
 import helper.IdHelper;
@@ -19,9 +18,9 @@ import java.util.List;
 public class Fields_Mapping_Pre_Tar_SHEET {
     public static void main(String[] args) {
         List<Fields_Mapping_Pre_Tar_LINE> Fields_Mapping_Pre_Tar_LINEs = new ArrayList<>();
-        Connection connection = ConnectionHelper.getConnection(JDBCENUM.NEW);
+        Connection connection = ConnectionHelper.getConnection(Config.jdbcenum);
         for (String table : Config.tables) {
-            IdHelper.idand1000(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID);
+            IdHelper.idand10000(Config.Fields_Mapping_Pre_Tar_SHEET_RUNID);
 
             List<FieldObject> tableFields = ConnectionHelper.getColumnNames(table, connection);
             for (FieldObject tableField : tableFields) {
