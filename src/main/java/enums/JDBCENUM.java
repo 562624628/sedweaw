@@ -12,7 +12,10 @@ public enum JDBCENUM {
 
     NEW("jdbc:mysql://awschina-nx-app-test2-rds-01.crag5sximeqt.rds.cn-northwest-1.amazonaws.com.cn:3306/incomenew_dm_backend_00", "incomenew_dmtest1_rw", "tjJg7NohARX8xjM4"),
 
-    NEWPAYMENT("jdbc:mysql://awschina-nx-app-test2-rds-01.crag5sximeqt.rds.cn-northwest-1.amazonaws.com.cn:3306/incomenew_payment_gateway_00","incomenew_dmtest1_rw","tjJg7NohARX8xjM4");
+    NEWPAYMENT("jdbc:mysql://awschina-nx-app-test2-rds-01.crag5sximeqt.rds.cn-northwest-1.amazonaws.com.cn:3306/incomenew_payment_gateway_00","incomenew_dmtest1_rw","tjJg7NohARX8xjM4"),
+
+    LOCAL("jdbc:mysql://localhost:3306/incomenew_dm_backend_00", "root", "root");
+
 
     public String url;
 

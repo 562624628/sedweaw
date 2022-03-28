@@ -13,13 +13,13 @@ import java.util.stream.Collectors;
  */
 public class StandardSHEET {
     public static void main(String[] args) {
-        Integer start1 = 11200+Config.start;
-        Integer start2 = 21200+Config.start;
-        Integer start3 = 31200+Config.start;
-        Integer start4 = 41200+Config.start;
-        Integer start5 = 51200+Config.start;
-        Integer start6 = 61200+Config.start;
-        Integer start7 = 71200+Config.start;
+        Integer start1 = 10700+Config.start;
+        Integer start2 = 20700+Config.start;
+        Integer start3 = 30700+Config.start;
+        Integer start4 = 40700+Config.start;
+        Integer start5 = 50700+Config.start;
+        Integer start6 = 60700+Config.start;
+        Integer start7 = 70700+Config.start;
         System.out.println(String.join("\t", Config.tables));
         System.out.println(String.join("\t",getIntLine(Config.start)));
         System.out.println(String.join("\t",getIntLine(start1)));

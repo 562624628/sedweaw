@@ -37,7 +37,7 @@ public class TAB_Condition_SHEET {
                     .TAR_TABLE("dc_" + table)
                     .SRC_TAB(table)
                     .SRC_TAB_ALIAS("a")
-                    .COL_NAME("a.deleted")
+                    .COL_NAME("a.is_deleted")
                     .EXPRESION_FURMULA("=")
                     .EXPRESION_VALUE("'N'")
                     .EXEC_POSITION("BEF")
