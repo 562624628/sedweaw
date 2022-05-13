@@ -16,4 +16,9 @@ public class IdHelper {
         id.set(id.get()+1);
         return id.get();
     }
+
+    public static void main(String[] args) {
+        String a = "debit_note_detail";
+        System.out.println(a.toUpperCase());
+    }
 }
