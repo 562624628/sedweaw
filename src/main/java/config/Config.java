@@ -12,13 +12,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @date: 2022/2/25
  */
 public class Config {
-    public static Integer start = 0;
-    public static String moduleNumber = "13";
+    public static Integer start = 1;
+    public static String moduleNumber = "14";
     public static List<String> tables = Arrays.asList(
-            "doc_req","doc_file","doc_template_content","doc_print_result"
+            "file_store","file_store_content","file_store_log"
     );
 
-    public static String module = "notice";
+    public static String module = "file";
     public static JDBCENUM jdbcenum = JDBCENUM.NEW;
     //Table_List_SRC_SHEET RUNID配置
     //Table_List_SRC_SHEET RUNID配置

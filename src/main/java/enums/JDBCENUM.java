@@ -8,9 +8,9 @@ package enums;
 public enum JDBCENUM {
 
 
-    OLD("jdbc:mysql://awschina-nx-app-test-rds-01.crag5sximeqt.rds.cn-northwest-1.amazonaws.com.cn:3306/inc_gr_passage_00", "income_test1_ro", "lxbEyCzHrPppCeaa"),
+    OLD("jdbc:mysql://awschina-nx-app-test-rds-01.crag5sximeqt.rds.cn-northwest-1.amazonaws.com.cn:3306/inc_gr_notice_00", "income_test1_ro", "lxbEyCzHrPppCeaa"),
 
-    NEW("jdbc:mysql://awschina-nx-app-test2-rds-01.crag5sximeqt.rds.cn-northwest-1.amazonaws.com.cn:3306/incomenew_notice_00", "incomenew_dmtest1_rw", "tjJg7NohARX8xjM4"),
+    NEW("jdbc:mysql://awschina-nx-app-test2-rds-01.crag5sximeqt.rds.cn-northwest-1.amazonaws.com.cn:3306/incomenew_file_00", "incomenew_dmtest1_rw", "tjJg7NohARX8xjM4"),
 
     NEWPAYMENT("jdbc:mysql://awschina-nx-app-test2-rds-01.crag5sximeqt.rds.cn-northwest-1.amazonaws.com.cn:3306/incomenew_payment_gateway_00","incomenew_dmtest1_rw","tjJg7NohARX8xjM4"),
 
